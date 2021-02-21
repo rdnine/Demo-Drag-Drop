@@ -17,4 +17,20 @@ class TemplateRender {
   }
 }
 
-const projectForm = new TemplateRender('project-input', 'app', 'user-input');
+class ProjectInput {
+  form: HTMLFormElement;
+  titleInputEl: HTMLInputElement;
+  descriptionInputEl: HTMLInputElement;
+  peopleInputEl: HTMLInputElement;
+
+  constructor() {
+    this.form = document.querySelector('form') as HTMLFormElement;
+    this.titleInputEl = document.querySelector('#title') as HTMLInputElement;
+    this.descriptionInputEl = document.querySelector('#description') as HTMLInputElement;
+    this.peopleInputEl = document.querySelector('#people') as HTMLInputElement;
+
+    new TemplateRender('project-input', 'app', 'user-input')
+  }
+}
+
+const projectForm = new ProjectInput();
