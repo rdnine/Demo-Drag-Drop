@@ -28,8 +28,17 @@ class ProjectInput {
     this.titleInputEl = document.querySelector('#title') as HTMLInputElement;
     this.descriptionInputEl = document.querySelector('#description') as HTMLInputElement;
     this.peopleInputEl = document.querySelector('#people') as HTMLInputElement;
-
+    
+    this.configure();
     new TemplateRender('project-input', 'app', 'user-input')
+  }
+
+  private submitHandler(event: Event) {
+    event.preventDefault();
+  }
+
+  private configure() {
+    this.form.addEventListener('submit', this.submitHandler.bind(this));
   }
 }
 
